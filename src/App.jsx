@@ -1,15 +1,24 @@
 // import { useState } from 'react'
 import './App.css'
+import Logo from './assets/HawaiianPlantsLogo.png';
 
 function App() {
 
   return (
-    <section>
+    <section className="homePage">
       <div className="sidebar">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          <img src={Logo}></img>
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+        <div>
+
+        </div>
       </div>
       <div className="card">
         <div></div>

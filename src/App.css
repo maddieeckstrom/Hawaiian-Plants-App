@@ -1,0 +1,15 @@
+body {
+  margin: 5%;
+  padding: 0;
+}
+
+.homePage {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
