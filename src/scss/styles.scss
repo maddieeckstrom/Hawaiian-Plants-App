@@ -1,1 +1,11 @@
 @import "bootstrap/scss/bootstrap";
+
+.btn {
+    width: 100%;
+    color: black;
+    background-color: rgb(250, 195, 44);
+}
+
+.btn.show {
+    background-color: black;
+}
