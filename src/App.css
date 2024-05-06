@@ -2,6 +2,51 @@
   width: 100vw;
 }
 
+body {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  overflow-x: hidden;
+}
+
+.row {
+  height: 100vh;
+}
+
+.col-4 {
+  background-color: rgba(250, 195, 44, 0.201);
+  padding: 0;
+}
+
 .logo {
   width: 100%;
+  margin-bottom: 10%;
+}
+
+.btn {
+  width: 100%;
+  color: black;
+  background-color: rgba(250, 195, 44, 0.475);
+  border-radius:0;
+  /* margin-bottom: 10%; */
+}
+
+.btn-secondary {
+  --bs-btn-hover-bg: rgba(250, 195, 44, 0.559);
+}
+
+.btn.show {
+  background-color: black;
+}
+
+.mapBox {
+  margin-top: 10%;
+}
+
+.map {
+  width: 100%;
+  object-fit: contain;
+}
+
+.placeholderIMG {
+  object-fit: cover;
+  max-width: 100%;
 }

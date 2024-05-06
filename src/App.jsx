@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import './scss/styles.scss';
 import './App.css';
 import * as bootstrap from 'bootstrap'
-import Logo from './assets/HawaiianPlantsLogo.png';
+import Logo from './assets/images/HawaiianPlantsLogo.png';
+import Map from './assets/images/islandmap.png';
+import mhh from './assets/images/maoHibiscus.jpg';
 
 function Placeholder() {
   return (
-    <div>
-      <div>
-        Image goes here
-        Name goes here
-      </div>
-      <div>
-        Information on the plant here
+    <div className='row  justify-content-center'>
+      <div className='col-10'>
+        <img className='placeholderIMG' src={mhh} alt="The state flower of Hawaii"/>
+        <div className='placeholderName'>
+          <h1>Ma'o Hau Hele</h1>
+          <h1>Hibiscus brackenridgei</h1>
+        </div>
+        <p>Information on the plant here</p>
       </div>
     </div>
   )
@@ -41,23 +44,22 @@ function App() {
             </div>
             <div className="dropdown">
               <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Which Hawaiian Island?
+                Island
               </button>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Island of Hawaii</a></li>
+                <li><a className="dropdown-item" href="#">Island of Hawai'i</a></li>
                 <li><a className="dropdown-item" href="#">Maui</a></li>
-                <li><a className="dropdown-item" href="#">Kauai</a></li>
-                <li><a className="dropdown-item" href="#">Oahu</a></li>
-                <li><a className="dropdown-item" href="#">Lanai</a></li>
-                <li><a className="dropdown-item" href="#">Molokai</a></li>
-                <li><a className="dropdown-item" href="#">Lanai</a></li>
-                <li><a className="dropdown-item" href="#">Niihau</a></li>
-                <li><a className="dropdown-item" href="#">Kahoolawe</a></li>
+                <li><a className="dropdown-item" href="#">Kaua'i</a></li>
+                <li><a className="dropdown-item" href="#">O'ahu</a></li>
+                <li><a className="dropdown-item" href="#">Lāna'i</a></li>
+                <li><a className="dropdown-item" href="#">Moloka'i</a></li>
+                <li><a className="dropdown-item" href="#">Ni'ihau</a></li>
+                <li><a className="dropdown-item" href="#">Kaho'olawe</a></li>
               </ul>
             </div>
             <div className="dropdown" onClick={handleInteraction}>
               <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Where On Land?
+                Location
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Coastal</a></li>
@@ -67,13 +69,16 @@ function App() {
             </div>
             <div className="dropdown">
               <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Type Of Plant?
+                Plant Type
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Tree</a></li>
                 <li><a className="dropdown-item" href="#">Shrub</a></li>
                 <li><a className="dropdown-item" href="#">Other</a></li>
               </ul>
+            </div>
+            <div className='mapBox'>
+              <img className='map' src={Map} alt='hawaiian islands'></img>
             </div>
           </div>
           <div className="col-8">
