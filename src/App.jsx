@@ -48,7 +48,7 @@ function App() {
   const [filteredPlants, setFilteredPlants] = useState([]);
 
   function handlePlaceholder() {
-    setShowPlaceholder(true);
+    setShowPlaceholder(false);
   }
 
   function handlePlants() {
@@ -56,12 +56,7 @@ function App() {
     setFilteredPlants(filtered);
   }
 
-
-  // function handlePlaceholder() {
-  //   setShowPlaceholder(false);
-  // }
-
-  //whenever I create another function to load more content, I will write onClick={handleInteraction} to set showPlaceholder to false when the user loads more content on the screen
+  //whenever I create another function to load more content, I will write onClick={handlePlaceholder} to set showPlaceholder to false when the user loads more content on the screen
 
   return (
     <section>
@@ -86,7 +81,7 @@ function App() {
                 <li><a className="dropdown-item" href="#">Kahoʻolawe</a></li>
               </ul>
             </div>
-            <div className="dropdown" onClick={handleInteraction}>
+            <div className="dropdown">
               <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Location
               </button>
@@ -107,12 +102,23 @@ function App() {
                 <li><a className="dropdown-item" href="#">Herbaceous</a></li>
               </ul>
             </div>
+            <button type="button" className="btn btn-secondary submit" onClick={handlePlaceholder}>Submit</button>
             <div className='mapBox'>
               <img className='map' src={Map} alt='hawaiian islands'></img>
             </div>
           </div>
           <div className="col-8">
             {showPlaceholder && <Placeholder />}
+            <div className='row  justify-content-center'>
+      <div className='col-10'>
+        {/* <img className='placeholderIMG' src={} alt="The plant being described"/>
+        <div className='placeholderName'>
+          <h1>{nameCommon}</h1>
+          <h1>{nameScientific}</h1>
+        </div>
+        <p></p> */}
+      </div>
+    </div>
           </div>
         </div>
       </div>

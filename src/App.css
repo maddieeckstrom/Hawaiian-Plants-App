@@ -37,6 +37,10 @@ body {
   background-color: black;
 }
 
+.submit {
+  margin-top: 10%;
+}
+
 .mapBox {
   margin-top: 10%;
 }
