@@ -22,16 +22,16 @@ function Placeholder() {
 }
 
 const plantData = [
-  { nameCommon: 'ʻŌhiʻa lehua', nameScientific: 'Metrosideros polymorpha', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
-  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: 'ʻŌhiʻa lehua', nameScientific: 'Metrosideros polymorpha', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Lānaʻi', 'Molokaʻi'], locations: ['Mountains', 'Forest'], type: 'Woody'},
+  { nameCommon: 'Koa', nameScientific: 'Acacia koa', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Lānaʻi', 'Molokaʻi'], locations: ['Mountains', 'Forest'], type: 'Woody'},
+  { nameCommon: 'ʻAkoko', nameScientific: 'Euphorbia celastroides var. stokesii', islands: ['Kauaʻi', 'Molokaʻi', 'Niʻihau', 'Kahoʻolawe'], locations: 'Coastal', type: 'Woody'},
+  { nameCommon: 'ʻOhai', nameScientific: 'Sesbania tomentosa', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Lānaʻi', 'Molokaʻi', 'Kahoʻolawe'], locations: 'Coastal', type: 'Woody'},
+  { nameCommon: 'Pā‘ūohi‘iaka', nameScientific: 'Jaquemontia ovalifolia subsp. sandwicense', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Lānaʻi', 'Molokaʻi','Niʻihau', 'Kahoʻolawe'], locations: 'Coastal', type: 'Herbaceous'},
+  { nameCommon: 'Māʻohiʻohi', nameScientific: 'Stenogyne calaminthoides', islands: 'Island of Hawaiʻi', locations: 'Forest', type: 'Herbaceous'},
+  { nameCommon: 'Ama’u', nameScientific: 'Sadleria pallida', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Molokaʻi'], locations: ['Forest', 'Other'], type: 'Herbaceous'},
+  { nameCommon: 'Loulu', nameScientific: 'Pritchardia martii', islands: ['Oʻahu', 'Island of Hawaiʻi'], locations: ['Mountains', 'Coastal'], type: 'Woody'},
+  { nameCommon: 'Naupaka kahakai', nameScientific: 'Scaevola taccada var. taccada', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Lānaʻi', 'Molokaʻi','Niʻihau', 'Kahoʻolawe'], locations: 'Coastal', type: 'Woody'},
+  { nameCommon: 'Palapalai', nameScientific: 'Microlepia strigosa var. strigosa', islands: ['Island of Hawaiʻi', 'Maui', 'Kauaʻi', 'Oʻahu', 'Lānaʻi', 'Molokaʻi'], locations: ['Forest', 'Mountains'], type: 'Herbaceous'},
 ]
 
 function filterPlants(islandFilter, locationFilter, typeFilter) {
@@ -45,12 +45,19 @@ function filterPlants(islandFilter, locationFilter, typeFilter) {
 
 function App() {
   const [showPlaceholder, setShowPlaceholder] = useState(true);
+  const [filteredPlants, setFilteredPlants] = useState([]);
 
-  function handleInteraction() {
+  function handlePlaceholder() {
     setShowPlaceholder(true);
   }
 
-  // function handleInteraction() {
+  function handlePlants() {
+    const filtered = filterPlants(islandFilter, locationFilter, typeFilter);
+    setFilteredPlants(filtered);
+  }
+
+
+  // function handlePlaceholder() {
   //   setShowPlaceholder(false);
   // }
 
@@ -69,14 +76,14 @@ function App() {
                 Island
               </button>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Island of Hawai'i</a></li>
+                <li><a className="dropdown-item" href="#">Island of Hawaiʻi</a></li>
                 <li><a className="dropdown-item" href="#">Maui</a></li>
-                <li><a className="dropdown-item" href="#">Kaua'i</a></li>
-                <li><a className="dropdown-item" href="#">O'ahu</a></li>
-                <li><a className="dropdown-item" href="#">Lāna'i</a></li>
-                <li><a className="dropdown-item" href="#">Moloka'i</a></li>
-                <li><a className="dropdown-item" href="#">Ni'ihau</a></li>
-                <li><a className="dropdown-item" href="#">Kaho'olawe</a></li>
+                <li><a className="dropdown-item" href="#">Kauaʻi</a></li>
+                <li><a className="dropdown-item" href="#">Oʻahu</a></li>
+                <li><a className="dropdown-item" href="#">Lānaʻi</a></li>
+                <li><a className="dropdown-item" href="#">Molokaʻi</a></li>
+                <li><a className="dropdown-item" href="#">Niʻihau</a></li>
+                <li><a className="dropdown-item" href="#">Kahoʻolawe</a></li>
               </ul>
             </div>
             <div className="dropdown" onClick={handleInteraction}>
@@ -85,8 +92,10 @@ function App() {
               </button>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href="#">Coastal</a></li>
-                <li><a className="dropdown-item" href="#">Inland</a></li>
+                <li><a className="dropdown-item" href="#">Forest</a></li>
                 <li><a className="dropdown-item" href="#">Mountains</a></li>
+                <li><a className="dropdown-item" href="#">Other</a></li>
+
               </ul>
             </div>
             <div className="dropdown">
@@ -94,9 +103,8 @@ function App() {
                 Plant Type
               </button>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#">Tree</a></li>
-                <li><a className="dropdown-item" href="#">Shrub</a></li>
-                <li><a className="dropdown-item" href="#">Other</a></li>
+                <li><a className="dropdown-item" href="#">Woody</a></li>
+                <li><a className="dropdown-item" href="#">Herbaceous</a></li>
               </ul>
             </div>
             <div className='mapBox'>
