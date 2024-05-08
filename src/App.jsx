@@ -15,10 +15,32 @@ function Placeholder() {
           <h1>Ma'o Hau Hele</h1>
           <h1>Hibiscus brackenridgei</h1>
         </div>
-        <p>Information on the plant here</p>
+        <p>This endemic plant is the official state flower of Hawaii. The yellow flowers only bloom a few months out of the year during the winter time. This endangered plant has three known subspecies, brackenridgei, mokuleianus, and molokaiana.</p>
       </div>
     </div>
   )
+}
+
+const plantData = [
+  { nameCommon: 'ʻŌhiʻa lehua', nameScientific: 'Metrosideros polymorpha', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+  { nameCommon: '', nameScientific: '', island: '', location: '', type: ''},
+]
+
+function filterPlants(islandFilter, locationFilter, typeFilter) {
+  return plantData.filter(plant => {
+    return
+      (!islandFilter || plant.island === islandFilter) &&
+      (!locationFilter || plant.location === locationFilter) &&
+      (!typeFilter || plant.type === typeFilter);
+  });
 }
 
 function App() {
