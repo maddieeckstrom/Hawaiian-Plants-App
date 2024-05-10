@@ -43,11 +43,19 @@ body {
 
 .mapBox {
   margin-top: 10%;
+  display: grid;
 }
 
 .map {
-  width: 100%;
+  width: 75%;
   object-fit: contain;
+  justify-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .map {
+    width: 90%;
+  }
 }
 
 .placeholderIMG {
